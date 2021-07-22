@@ -1,0 +1,16 @@
+{
+  "name": "node-extract-text-from-file",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mammoth": "^1.4.17",
+    "node-fetch": "^2.6.1",
+    "pdfjs-dist": "^2.8.335"
+  }
+}
