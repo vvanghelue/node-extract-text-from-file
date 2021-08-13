@@ -88,11 +88,7 @@ async function extractPDF(arrayBuffer) {
 
 // Extract DOCX
 async function extractDOCX(arrayBuffer) {
-  return new Promise(async (resolve) => {
-    const text = (await mammoth.extractRawText({ buffer: arrayBuffer }))
-      .value;
-    resolve(text.replace(/\n/g, " ").replace(/  /g, ""));
-  });
+  return await mammoth.extractRawText({ buffer: arrayBuffer }).value;
 }
 
 
