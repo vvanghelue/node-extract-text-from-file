@@ -16,7 +16,7 @@ npm i --save node-extract-text-from-file
 
 ## Directly from disk file
 ```javascript
-const { detectAndExtractText } = require('node-extract-text-from-file')
+const { extractText } = require('node-extract-text-from-file')
 /**
  * FROM FILE PATH
  */
@@ -28,7 +28,7 @@ const { detectAndExtractText } = require('node-extract-text-from-file')
     ];
 
     for (const url of files) {
-        const { text, originFileType } = await detectAndExtractText({ fromPath: url })
+        const { text, originFileType } = await extractText({ fromPath: url })
         console.log('#')
         console.log('## originFileType : ' + originFileType)
         console.log('## text :')
@@ -41,7 +41,7 @@ const { detectAndExtractText } = require('node-extract-text-from-file')
 
 ## ... or from url
 ```javascript
-const { detectAndExtractText } = require('node-extract-text-from-file')
+const { extractText } = require('node-extract-text-from-file')
 /**
  * FROM URL
  */
@@ -53,7 +53,7 @@ const { detectAndExtractText } = require('node-extract-text-from-file')
     ];
 
     for (const url of files) {
-        const { text, originFileType } = await detectAndExtractText({ fromUrl: url })
+        const { text, originFileType } = await extractText({ fromUrl: url })
         console.log('#')
         console.log('## originFileType : ' + originFileType)
         console.log('## text :')
