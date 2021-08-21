@@ -1,4 +1,4 @@
-const { detectAndExtractText } = require('./index')
+const { extractText } = require('./index')
 
 /**
  * FROM URL
@@ -11,7 +11,7 @@ const { detectAndExtractText } = require('./index')
     ];
 
     for (const url of files) {
-        const { text, originFileType } = await detectAndExtractText({ fromUrl: url })
+        const { text, originFileType } = await extractText({ fromUrl: url })
         console.log('#')
         console.log('## originFileType : ' + originFileType)
         console.log('## text :')
@@ -32,7 +32,7 @@ const { detectAndExtractText } = require('./index')
     ];
 
     for (const url of files) {
-        const { text, originFileType } = await detectAndExtractText({ fromPath: url })
+        const { text, originFileType } = await extractText({ fromPath: url })
         console.log('#')
         console.log('## originFileType : ' + originFileType)
         console.log('## text :')

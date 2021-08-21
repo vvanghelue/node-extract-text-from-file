@@ -91,7 +91,7 @@ async function extractDOCX(arrayBuffer) {
 }
 
 
-async function detectAndExtractText({ fromUrl, fromPath }) {
+async function extractText({ fromUrl, fromPath }) {
     let buffer, originFileType
 
     if (fromUrl) {
@@ -123,5 +123,5 @@ async function detectAndExtractText({ fromUrl, fromPath }) {
 }
 
 module.exports = {
-    detectAndExtractText
+  extractText
 }
