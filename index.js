@@ -1,14 +1,8 @@
-// import mammoth from "mammoth"; // for docx
-// import pdfjsWorker from "pdfjs-dist/legacy/build/pdf.worker.js";
-// import fetch from "node-fetch"
-// import * as pdfjs from "pdfjs-dist/legacy/build/pdf.js";
 
-const mammoth = require("mammoth")
 const fetch = require("node-fetch")
 require("pdfjs-dist/lib/examples/node/domstubs.js").setStubs(global)
 
 const pdfjs = require("pdfjs-dist/legacy/build/pdf.js")
-
 // pdfjs.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 
 const HEADER_MAPPING = {
