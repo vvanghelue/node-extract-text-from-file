@@ -88,33 +88,39 @@ async function extractPDF(arrayBuffer) {
 
 // Extract DOCX
 async function extractDOCX(arrayBuffer) {
-  return (await mammoth.extractRawText({ buffer: arrayBuffer })).value;
+  // return (await mammoth.extractRawText({ buffer: arrayBuffer })).value;
+  const WordExtractor = require("word-extractor"); 
+  const extractor = new WordExtractor();
+  return (await extractor.extract(arrayBuffer)).getBody()
+  
+  // extracted.then(function(doc) { console.log(doc.getBody()); });
 }
 
 
 async function detectAndExtractText({ fromUrl, fromPath }) {
-    let arrayBuffer, originFileType
+    let buffer, originFileType
 
     if (fromUrl) {
-        arrayBuffer = await (await fetch(fromUrl)).arrayBuffer();
+      buffer = await (await fetch(fromUrl)).buffer();
+      // console.log(buffer)
     }
     const fsPromises = require('fs').promises
     if (fromPath) {
-        arrayBuffer = await fsPromises.readFile(fromPath)
-        // console.log(arrayBuffer)
+        buffer = await fsPromises.readFile(fromPath)
+        // console.log(buffer)
         // process.exit()
     }
-    if ((await getFileTypeFromArrayBuffer(arrayBuffer)) == "pdf") {
+    if ((await getFileTypeFromArrayBuffer(buffer)) == "pdf") {
         originFileType = "pdf"
         // console.log("");
         // console.log("PDF :");
-        output = await extractPDF(arrayBuffer);
+        output = await extractPDF(buffer);
     }
-    if ((await getFileTypeFromArrayBuffer(arrayBuffer)) == "doc-docx") {
+    if ((await getFileTypeFromArrayBuffer(buffer)) == "doc-docx") {
         originFileType = "doc-docx"
         // console.log("");
         // console.log("DOCX :");
-        output = await extractDOCX(arrayBuffer);
+        output = await extractDOCX(buffer);
     }
     return {
         text: cleanOutput(output),

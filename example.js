@@ -27,7 +27,8 @@ const { detectAndExtractText } = require('./index')
     const files = [
         __dirname + "/test-files/test1.pdf",
         __dirname + "/test-files/test2.pdf",
-        __dirname + "/test-files/test1.docx"
+        __dirname + "/test-files/test1.docx",
+        __dirname + "/test-files/test3.doc"
     ];
 
     for (const url of files) {
