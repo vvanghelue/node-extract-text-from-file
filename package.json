@@ -9,7 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mammoth": "^1.4.17",
     "node-fetch": "^2.6.1",
     "pdfjs-dist": "^2.8.335",
     "word-extractor": "^1.0.4"
