@@ -2,7 +2,7 @@
 Detection and text extraction supported for .DOC, .DOCX, .PDF files
 
 uses :
-- https://github.com/mwilliamson/mammoth.js/
+- https://github.com/morungos/node-word-extractor
 - https://github.com/mozilla/pdfjs-dist
 
 
