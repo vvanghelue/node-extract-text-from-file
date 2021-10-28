@@ -4,6 +4,7 @@ const { extractText } = require('./index')
  * FROM URL
  */
 ; (async () => {
+    
     const files = [
         "https://vvg-video.s3.eu-west-1.amazonaws.com/test1.pdf",
         "https://vvg-video.s3.eu-west-1.amazonaws.com/respondus-docx-sample-file_0.docx",
